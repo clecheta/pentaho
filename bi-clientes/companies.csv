@@ -1,0 +1,6 @@
+id,database,name,multicompany
+545,dw_545,lady_lord-omar,false
+1330,dw_1330,lady_lord-muller,false
+1345,dw_1345,lady_lord-ecoville,false
+1126,dw_group_1126,lady_lord,true
+1774,dw_1774,STUDIO_MADEMOISELLE,false

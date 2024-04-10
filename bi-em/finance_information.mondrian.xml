@@ -1,0 +1,34 @@
+<Schema name="Informa&#231;&#245;es Financeiras" description="An&#225;lise de entradas e sa&#237;das de contas banc&#225;rias">
+  <Cube name="bank" visible="true" cache="true" enabled="true">
+    <Table name="fact_bank" schema="public">
+    </Table>
+    <Dimension type="TimeDimension" visible="true" foreignKey="fk_time" highCardinality="false" name="periodo">
+      <Hierarchy name="Per&#237;odo" visible="true" hasAll="true" allMemberName="Todos Per&#237;odos" primaryKey="fk_time">
+        <Table name="dim_time" schema="public">
+        </Table>
+        <Level name="Ano" visible="true" table="dim_time" column="ano" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Trimestre" visible="true" table="dim_time" column="trimestre" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+        </Level>
+        <Level name="Mes" visible="true" table="dim_time" column="mesdescabrvano" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+        <Level name="Esta&#231;&#227;o" visible="true" table="dim_time" column="estacao" type="String" uniqueMembers="false" levelType="TimeUndefined" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_organization" highCardinality="false" name="organization">
+      <Hierarchy name="Organization" visible="true" hasAll="true" primaryKey="fk_organization" caption="Organiza&#231;&#227;o">
+        <Table name="dim_organization" schema="public">
+        </Table>
+        <Level name="name" visible="true" table="dim_organization" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Nome">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <CalculatedMember name="PM" formula="IIf(([Measures].[Quantidade] = 0), 0, [Measures].[Valor]/[Measures].[Quantidade])" dimension="Measures" visible="true">
+      <CalculatedMemberProperty name="FORMAT_STRING" expression="IIf([Measures].[PM] &#62;= 80000, &#34;|R$ #,##0.00|arrow=up&#34;, &#34;|R$ #,##0.00|arrow=down&#34;)">
+      </CalculatedMemberProperty>
+    </CalculatedMember>
+    <CalculatedMember name="Total" formula="[Measures].[Valor] * [Measures].[Quantidade]" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+</Schema>

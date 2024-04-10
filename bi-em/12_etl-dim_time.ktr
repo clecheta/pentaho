@@ -1,0 +1,2473 @@
+<transformation>
+  <info>
+    <name>12_etl-dim_time</name>
+    <description />
+    <extended_description />
+    <trans_version />
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>/</directory>
+    <parameters>
+    </parameters>
+    <log>
+      <trans-log-table>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STATUS</id>
+          <enabled>Y</enabled>
+          <name>STATUS</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+          <subject />
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>STARTDATE</id>
+          <enabled>Y</enabled>
+          <name>STARTDATE</name>
+        </field>
+        <field>
+          <id>ENDDATE</id>
+          <enabled>Y</enabled>
+          <name>ENDDATE</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>DEPDATE</id>
+          <enabled>Y</enabled>
+          <name>DEPDATE</name>
+        </field>
+        <field>
+          <id>REPLAYDATE</id>
+          <enabled>Y</enabled>
+          <name>REPLAYDATE</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>Y</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+        <field>
+          <id>EXECUTING_SERVER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_SERVER</name>
+        </field>
+        <field>
+          <id>EXECUTING_USER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_USER</name>
+        </field>
+        <field>
+          <id>CLIENT</id>
+          <enabled>N</enabled>
+          <name>CLIENT</name>
+        </field>
+      </trans-log-table>
+      <perf-log-table>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>SEQ_NR</id>
+          <enabled>Y</enabled>
+          <name>SEQ_NR</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>INPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>INPUT_BUFFER_ROWS</name>
+        </field>
+        <field>
+          <id>OUTPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>OUTPUT_BUFFER_ROWS</name>
+        </field>
+      </perf-log-table>
+      <channel-log-table>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>LOGGING_OBJECT_TYPE</id>
+          <enabled>Y</enabled>
+          <name>LOGGING_OBJECT_TYPE</name>
+        </field>
+        <field>
+          <id>OBJECT_NAME</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_NAME</name>
+        </field>
+        <field>
+          <id>OBJECT_COPY</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_COPY</name>
+        </field>
+        <field>
+          <id>REPOSITORY_DIRECTORY</id>
+          <enabled>Y</enabled>
+          <name>REPOSITORY_DIRECTORY</name>
+        </field>
+        <field>
+          <id>FILENAME</id>
+          <enabled>Y</enabled>
+          <name>FILENAME</name>
+        </field>
+        <field>
+          <id>OBJECT_ID</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_ID</name>
+        </field>
+        <field>
+          <id>OBJECT_REVISION</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_REVISION</name>
+        </field>
+        <field>
+          <id>PARENT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>PARENT_CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>ROOT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>ROOT_CHANNEL_ID</name>
+        </field>
+      </channel-log-table>
+      <step-log-table>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>N</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+      </step-log-table>
+      <metrics-log-table>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_DATE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_CODE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_CODE</name>
+        </field>
+        <field>
+          <id>METRICS_DESCRIPTION</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DESCRIPTION</name>
+        </field>
+        <field>
+          <id>METRICS_SUBJECT</id>
+          <enabled>Y</enabled>
+          <name>METRICS_SUBJECT</name>
+        </field>
+        <field>
+          <id>METRICS_TYPE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_TYPE</name>
+        </field>
+        <field>
+          <id>METRICS_VALUE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_VALUE</name>
+        </field>
+      </metrics-log-table>
+    </log>
+    <maxdate>
+      <connection />
+      <table />
+      <field />
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file />
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+    <created_user>-</created_user>
+    <created_date>2013/10/10 13:39:57.369</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2020/04/04 15:16:55.809</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>dw_EM</name>
+    <server>127.0.0.1</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>bi_em</database>
+    <port>5432</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb16bd6494c3fd89</password>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5432</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <order>
+    <hop>
+      <from>20 anos</from>
+      <to>Dias</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calcula Datas</from>
+      <to>Trimestre</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Corta 2 Dig. Ano</from>
+      <to>Calcula Parte Final</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DiaSemanaDesc</from>
+      <to>MesDesc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Ger DiasSemanaDesc</from>
+      <to>Normaliza DiaSemanaDesc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Ger MesDesc</from>
+      <to>Normaliza MesDesc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>MesDesc</from>
+      <to>Trim</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Normaliza DiaSemanaDesc</from>
+      <to>DiaSemanaDesc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Normaliza MesDesc</from>
+      <to>MesDesc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Trim</from>
+      <to>Corta 2 Dig. Ano</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Trimestre</from>
+      <to>DiaSemanaDesc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dias</from>
+      <to>Calcula Datas</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calcula Parte Final</from>
+      <to>Pega Estações</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Pega Estações</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>LPK dim_time</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <step>
+    <name>20 anos</name>
+    <type>RowGenerator</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>inicio</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency />
+        <decimal />
+        <group />
+        <nullif>20190101</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <limit>7686</limit>
+    <never_ending>N</never_ending>
+    <interval_in_ms />
+    <row_time_field />
+    <last_time_field />
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>64</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Calcula Datas</name>
+    <type>Calculator</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <failIfNoFile>N</failIfNoFile>
+    <calculation>
+      <field_name>um</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>1</field_a>
+      <field_b />
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>1</value_length>
+      <value_precision>0</value_precision>
+      <remove>Y</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>Data</field_name>
+      <calc_type>ADD_DAYS</calc_type>
+      <field_a>inicio</field_a>
+      <field_b>Dias</field_b>
+      <field_c />
+      <value_type>Date</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask>yyyy/MM/dd</conversion_mask>
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>Ano</field_name>
+      <calc_type>YEAR_OF_DATE</calc_type>
+      <field_a>Data</field_a>
+      <field_b />
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>4</value_length>
+      <value_precision>0</value_precision>
+      <remove>N</remove>
+      <conversion_mask>0</conversion_mask>
+      <decimal_symbol>.</decimal_symbol>
+      <grouping_symbol>,</grouping_symbol>
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>Mes</field_name>
+      <calc_type>MONTH_OF_DATE</calc_type>
+      <field_a>Data</field_a>
+      <field_b />
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>2</value_length>
+      <value_precision>0</value_precision>
+      <remove>N</remove>
+      <conversion_mask>0</conversion_mask>
+      <decimal_symbol>.</decimal_symbol>
+      <grouping_symbol>,</grouping_symbol>
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>DiaAno</field_name>
+      <calc_type>DAY_OF_YEAR</calc_type>
+      <field_a>Data</field_a>
+      <field_b />
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>3</value_length>
+      <value_precision>0</value_precision>
+      <remove>N</remove>
+      <conversion_mask>0</conversion_mask>
+      <decimal_symbol>.</decimal_symbol>
+      <grouping_symbol>,</grouping_symbol>
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>DiaMes</field_name>
+      <calc_type>DAY_OF_MONTH</calc_type>
+      <field_a>Data</field_a>
+      <field_b />
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>2</value_length>
+      <value_precision>0</value_precision>
+      <remove>N</remove>
+      <conversion_mask>0</conversion_mask>
+      <decimal_symbol>.</decimal_symbol>
+      <grouping_symbol>,</grouping_symbol>
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>DiaSemana</field_name>
+      <calc_type>DAY_OF_WEEK</calc_type>
+      <field_a>Data</field_a>
+      <field_b />
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>1</value_length>
+      <value_precision>0</value_precision>
+      <remove>N</remove>
+      <conversion_mask>0</conversion_mask>
+      <decimal_symbol>.</decimal_symbol>
+      <grouping_symbol>,</grouping_symbol>
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>SemanaAno</field_name>
+      <calc_type>WEEK_OF_YEAR</calc_type>
+      <field_a>Data</field_a>
+      <field_b />
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>2</value_length>
+      <value_precision>0</value_precision>
+      <remove>N</remove>
+      <conversion_mask>0</conversion_mask>
+      <decimal_symbol>.</decimal_symbol>
+      <grouping_symbol>,</grouping_symbol>
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>AnoStr</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>Ano</field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>4</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>MesStr</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>Mes</field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>2</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>DiaMesStr</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>DiaMes</field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>2</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>fk_tempo</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>Dias</field_a>
+      <field_b>um</field_b>
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Calcula Parte Final</name>
+    <type>Calculator</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <failIfNoFile>N</failIfNoFile>
+    <calculation>
+      <field_name>Espaco</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a> </field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>MesDescAbrvAno</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>MesDescAbrv</field_a>
+      <field_b>Espaco</field_b>
+      <field_c>Ano2Digito</field_c>
+      <value_type>String</value_type>
+      <value_length>6</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>Traco</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>-</field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>AnoMes</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>AnoStr</field_a>
+      <field_b>Traco</field_b>
+      <field_c>MesStr</field_c>
+      <value_type>String</value_type>
+      <value_length>7</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>SemanaAnoStr</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>SemanaAno</field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>2</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>SemanaAnoStr2</field_name>
+      <calc_type>GET_ONLY_DIGITS</calc_type>
+      <field_a>SemanaAnoStr</field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>2</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>Sem</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>Sem</field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>3</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>SemanaAnoDesc</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>Sem</field_a>
+      <field_b>Espaco</field_b>
+      <field_c>SemanaAnoStr2</field_c>
+      <value_type>String</value_type>
+      <value_length>6</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>DiaMesDesc</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>DiaMesStr</field_a>
+      <field_b>Espaco</field_b>
+      <field_c>MesDescAbrv</field_c>
+      <value_type>String</value_type>
+      <value_length>6</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>DiaMesSemana</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>DiaMesStr</field_a>
+      <field_b>Traco</field_b>
+      <field_c>DiaSemanaDescAbrv</field_c>
+      <value_type>String</value_type>
+      <value_length>6</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>AnoEspMes</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>AnoStr</field_a>
+      <field_b>Espaco</field_b>
+      <field_c>MesStrZero</field_c>
+      <value_type>String</value_type>
+      <value_length>7</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Corta 2 Dig. Ano</name>
+    <type>StringCut</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>AnoStr</in_stream_name>
+        <out_stream_name>Ano2Digito</out_stream_name>
+        <cut_from>2</cut_from>
+        <cut_to>4</cut_to>
+      </field>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DiaSemanaDesc</name>
+    <type>StreamLookup</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <from>Normaliza DiaSemanaDesc</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>N</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>DiaSemana</name>
+        <field>DiaNr</field>
+      </key>
+      <value>
+        <name>DiaDesc</name>
+        <rename>DiaSemanaDesc</rename>
+        <default />
+        <type>String</type>
+      </value>
+      <value>
+        <name>DiaDescAbrv</name>
+        <rename>DiaSemanaDescAbrv</rename>
+        <default />
+        <type>String</type>
+      </value>
+    </lookup>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Dias</name>
+    <type>Sequence</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <valuename>Dias</valuename>
+    <use_database>N</use_database>
+    <connection />
+    <schema />
+    <seqname>SEQ_</seqname>
+    <use_counter>Y</use_counter>
+    <counter_name />
+    <start_at>0</start_at>
+    <increment_by>1</increment_by>
+    <max_value>10000000</max_value>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Ger DiasSemanaDesc</name>
+    <type>RowGenerator</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>DiaNr1</name>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>2</nullif>
+        <length>1</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDesc1</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>SEGUNDA-FEIRA</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDescAbrv1</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>SEG</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaNr2</name>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>3</nullif>
+        <length>1</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDesc2</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>TERÇA-FEIRA</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDescAbrv2</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>TER</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaNr3</name>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>4</nullif>
+        <length>1</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDesc3</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>QUARTA-FEIRA</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDescAbrv3</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>QUA</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaNr4</name>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>5</nullif>
+        <length>1</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDesc4</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>QUINTA-FEIRA</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDescAbrv4</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>QUI</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaNr5</name>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>6</nullif>
+        <length>1</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDesc5</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>SEXTA-FEIRA</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDescAbrv5</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>SEX</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaNr6</name>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>7</nullif>
+        <length>1</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDesc6</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>SÁBADO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDescAbrv6</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>SAB</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaNr7</name>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>1</nullif>
+        <length>1</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDesc7</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>DOMINGO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>DiaDescAbrv7</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>DOM</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <limit>1</limit>
+    <never_ending>N</never_ending>
+    <interval_in_ms />
+    <row_time_field />
+    <last_time_field />
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Ger MesDesc</name>
+    <type>RowGenerator</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>desc1</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>JANEIRO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv1</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>JAN</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc2</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>FEVEREIRO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv2</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>FEV</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc3</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>MARÇO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv3</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>MAR</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc4</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>ABRIL</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv4</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>ABR</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc5</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>MAIO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv5</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>MAI</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc6</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>JUNHO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv6</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>JUN</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc7</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>JULHO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv7</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>JUL</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc8</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>AGOSTO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv8</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>AGO</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc9</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>SETEMBRO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv9</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>SET</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc10</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>OUTUBRO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv10</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>OUT</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc11</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>NOVEMBRO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv11</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>NOV</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>desc12</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>DEZEMBRO</nullif>
+        <length>30</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>abrv12</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>DEZ</nullif>
+        <length>3</length>
+        <precision>0</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <limit>1</limit>
+    <never_ending>N</never_ending>
+    <interval_in_ms />
+    <row_time_field />
+    <last_time_field />
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>LPK dim_time</name>
+    <type>DimensionLookup</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <schema />
+    <table>dim_time</table>
+    <connection>dw_EM</connection>
+    <commit>100</commit>
+    <update>Y</update>
+    <fields>
+      <key>
+        <name>Ano</name>
+        <lookup>Ano</lookup>
+      </key>
+      <key>
+        <name>DiaAno</name>
+        <lookup>DiaAno</lookup>
+      </key>
+      <date>
+        <name />
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <field>
+        <name>Data</name>
+        <lookup>data</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>Mes</name>
+        <lookup>Mes</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>DiaMes</name>
+        <lookup>DiaMes</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>DiaMesDesc</name>
+        <lookup>DiaMesDesc</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>DiaSemana</name>
+        <lookup>DiaSemana</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>SemanaAno</name>
+        <lookup>SemanaAno</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>SemanaAnoDesc</name>
+        <lookup>SemanaAnoDesc</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>DiaSemanaDesc</name>
+        <lookup>DiaSemanaDesc</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>DiaSemanaDescAbrv</name>
+        <lookup>DiaSemanaDescAbrv</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>MesDesc</name>
+        <lookup>MesDesc</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>MesDescAbrv</name>
+        <lookup>MesDescAbrv</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>MesDescAbrvAno</name>
+        <lookup>MesDescAbrvAno</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>Trimestre</name>
+        <lookup>Trimestre</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>AnoMes</name>
+        <lookup>AnoMes</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>DiaMesSemana</name>
+        <lookup>DiaMesSemana</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>AnoEspMes</name>
+        <lookup>AnoEspMes</lookup>
+        <update>Update</update>
+      </field>
+      <field>
+        <name>Estacao</name>
+        <lookup>Estacao</lookup>
+        <update>Update</update>
+      </field>
+      <return>
+        <name>fk_time</name>
+        <rename />
+        <creation_method>tablemax</creation_method>
+        <use_autoinc>N</use_autoinc>
+        <version>version</version>
+      </return>
+    </fields>
+    <sequence />
+    <min_year>1900</min_year>
+    <max_year>2199</max_year>
+    <cache_size>5000</cache_size>
+    <preload_cache>N</preload_cache>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <start_date_alternative>none</start_date_alternative>
+    <start_date_field_name />
+    <useBatch>N</useBatch>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>800</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>MesDesc</name>
+    <type>StreamLookup</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <from>Normaliza MesDesc</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>N</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>Mes</name>
+        <field>MesNr</field>
+      </key>
+      <value>
+        <name>MesDesc</name>
+        <rename>MesDesc</rename>
+        <default />
+        <type>String</type>
+      </value>
+      <value>
+        <name>MesDescAbrv</name>
+        <rename>MesDescAbrv</rename>
+        <default />
+        <type>String</type>
+      </value>
+    </lookup>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Normaliza DiaSemanaDesc</name>
+    <type>Normaliser</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <typefield>typefield</typefield>
+    <fields>
+      <field>
+        <name>DiaNr1</name>
+        <value>1</value>
+        <norm>DiaNr</norm>
+      </field>
+      <field>
+        <name>DiaDesc1</name>
+        <value>1</value>
+        <norm>DiaDesc</norm>
+      </field>
+      <field>
+        <name>DiaDescAbrv1</name>
+        <value>1</value>
+        <norm>DiaDescAbrv</norm>
+      </field>
+      <field>
+        <name>DiaNr2</name>
+        <value>2</value>
+        <norm>DiaNr</norm>
+      </field>
+      <field>
+        <name>DiaDesc2</name>
+        <value>2</value>
+        <norm>DiaDesc</norm>
+      </field>
+      <field>
+        <name>DiaDescAbrv2</name>
+        <value>2</value>
+        <norm>DiaDescAbrv</norm>
+      </field>
+      <field>
+        <name>DiaNr3</name>
+        <value>3</value>
+        <norm>DiaNr</norm>
+      </field>
+      <field>
+        <name>DiaDesc3</name>
+        <value>3</value>
+        <norm>DiaDesc</norm>
+      </field>
+      <field>
+        <name>DiaDescAbrv3</name>
+        <value>3</value>
+        <norm>DiaDescAbrv</norm>
+      </field>
+      <field>
+        <name>DiaNr4</name>
+        <value>4</value>
+        <norm>DiaNr</norm>
+      </field>
+      <field>
+        <name>DiaDesc4</name>
+        <value>4</value>
+        <norm>DiaDesc</norm>
+      </field>
+      <field>
+        <name>DiaDescAbrv4</name>
+        <value>4</value>
+        <norm>DiaDescAbrv</norm>
+      </field>
+      <field>
+        <name>DiaNr5</name>
+        <value>5</value>
+        <norm>DiaNr</norm>
+      </field>
+      <field>
+        <name>DiaDesc5</name>
+        <value>5</value>
+        <norm>DiaDesc</norm>
+      </field>
+      <field>
+        <name>DiaDescAbrv5</name>
+        <value>5</value>
+        <norm>DiaDescAbrv</norm>
+      </field>
+      <field>
+        <name>DiaNr6</name>
+        <value>6</value>
+        <norm>DiaNr</norm>
+      </field>
+      <field>
+        <name>DiaDesc6</name>
+        <value>6</value>
+        <norm>DiaDesc</norm>
+      </field>
+      <field>
+        <name>DiaDescAbrv6</name>
+        <value>6</value>
+        <norm>DiaDescAbrv</norm>
+      </field>
+      <field>
+        <name>DiaNr7</name>
+        <value>7</value>
+        <norm>DiaNr</norm>
+      </field>
+      <field>
+        <name>DiaDesc7</name>
+        <value>7</value>
+        <norm>DiaDesc</norm>
+      </field>
+      <field>
+        <name>DiaDescAbrv7</name>
+        <value>7</value>
+        <norm>DiaDescAbrv</norm>
+      </field>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Normaliza MesDesc</name>
+    <type>Normaliser</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <typefield>MesNr</typefield>
+    <fields>
+      <field>
+        <name>desc1</name>
+        <value>1</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc2</name>
+        <value>2</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc3</name>
+        <value>3</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc4</name>
+        <value>4</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc5</name>
+        <value>5</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc6</name>
+        <value>6</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc7</name>
+        <value>7</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc8</name>
+        <value>8</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc9</name>
+        <value>9</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc10</name>
+        <value>10</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc11</name>
+        <value>11</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>desc12</name>
+        <value>12</value>
+        <norm>MesDesc</norm>
+      </field>
+      <field>
+        <name>abrv1</name>
+        <value>1</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv2</name>
+        <value>2</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv3</name>
+        <value>3</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv4</name>
+        <value>4</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv5</name>
+        <value>5</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv6</name>
+        <value>6</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv7</name>
+        <value>7</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv8</name>
+        <value>8</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv9</name>
+        <value>9</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv10</name>
+        <value>10</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv11</name>
+        <value>11</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+      <field>
+        <name>abrv12</name>
+        <value>12</value>
+        <norm>MesDescAbrv</norm>
+      </field>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Pega Estações</name>
+    <type>ScriptValueMod</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var strEstacao;
+var datDat = Data;
+var datDia = datDat.getDate();
+var datMes = datDat.getMonth()+1;
+
+if(datDia>=21 &amp;&amp; datMes>=3 &amp;&amp; datMes&lt;=5) {
+	strEstacao = "OUTONO";
+}
+if(datDia>=21 &amp;&amp; datMes>=6 &amp;&amp; datMes&lt;=8) {
+	strEstacao ="INVERNO";
+}
+if(datDia>=21 &amp;&amp; datMes>=9 &amp;&amp; datMes&lt;=11) {
+	strEstacao = "PRIMAVERA";
+}  
+if(datDia>=21 &amp;&amp; datMes>=12) {
+	strEstacao = "VERAO";
+}
+if(datMes>=1 &amp;&amp; datMes&lt;=2) {
+	strEstacao = "VERAO";
+}</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>strEstacao</name>
+        <rename>Estacao</rename>
+        <type>String</type>
+        <length>10</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>Trimestre</name>
+        <rename>Trimestre</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask />
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale />
+        <date_format_timezone />
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
+      </meta>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>672</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Trim</name>
+    <type>StringOperations</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>AnoStr</in_stream_name>
+        <out_stream_name />
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char />
+        <pad_len />
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>MesStr</in_stream_name>
+        <out_stream_name />
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char />
+        <pad_len />
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>DiaMesStr</in_stream_name>
+        <out_stream_name />
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char />
+        <pad_len />
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>MesStr</in_stream_name>
+        <out_stream_name>MesStrZero</out_stream_name>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>left</padding_type>
+        <pad_char>0</pad_char>
+        <pad_len>2</pad_len>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Trimestre</name>
+    <type>ValueMapper</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <field_to_use>Mes</field_to_use>
+    <target_field>Trimestre</target_field>
+    <non_match_default />
+    <fields>
+      <field>
+        <source_value>1</source_value>
+        <target_value>1</target_value>
+      </field>
+      <field>
+        <source_value>2</source_value>
+        <target_value>1</target_value>
+      </field>
+      <field>
+        <source_value>3</source_value>
+        <target_value>1</target_value>
+      </field>
+      <field>
+        <source_value>4</source_value>
+        <target_value>2</target_value>
+      </field>
+      <field>
+        <source_value>5</source_value>
+        <target_value>2</target_value>
+      </field>
+      <field>
+        <source_value>6</source_value>
+        <target_value>2</target_value>
+      </field>
+      <field>
+        <source_value>7</source_value>
+        <target_value>3</target_value>
+      </field>
+      <field>
+        <source_value>8</source_value>
+        <target_value>3</target_value>
+      </field>
+      <field>
+        <source_value>9</source_value>
+        <target_value>3</target_value>
+      </field>
+      <field>
+        <source_value>10</source_value>
+        <target_value>4</target_value>
+      </field>
+      <field>
+        <source_value>11</source_value>
+        <target_value>4</target_value>
+      </field>
+      <field>
+        <source_value>12</source_value>
+        <target_value>4</target_value>
+      </field>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step_error_handling>
+  </step_error_handling>
+  <slave-step-copy-partition-distribution>
+  </slave-step-copy-partition-distribution>
+  <slave_transformation>N</slave_transformation>
+  <attributes />
+</transformation>

@@ -1,0 +1,70 @@
+<Schema name="Financeiro">
+  <Cube name="Faturamento" visible="true" cache="false" enabled="true">
+    <Table name="fact_finance" schema="public">
+    </Table>
+    <Dimension type="TimeDimension" visible="true" foreignKey="fk_compensation_time" highCardinality="false" name="compensacao">
+      <Hierarchy name="compensacao" visible="true" hasAll="true" allMemberName="Todos Per&#237;odos" primaryKey="fk_time" description="Per&#237;odo de Compensa&#231;&#227;o">
+        <Table name="dim_time" schema="public">
+        </Table>
+        <Level name="Ano" visible="true" table="dim_time" column="ano" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Trimestre" visible="true" table="dim_time" column="trimestre" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+        </Level>
+        <Level name="Mes" visible="true" table="dim_time" column="anoespmes" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+        <Level name="Dia" visible="true" table="dim_time" column="diames" nameColumn="diamesdesc" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+        <Level name="Dia Semana" visible="true" table="dim_time" column="diasemana" nameColumn="diasemanadesc" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" description="Dia da Semana">
+        </Level>
+        <Level name="Esta&#231;&#227;o" visible="true" table="dim_time" column="estacao" type="String" uniqueMembers="false" levelType="TimeUndefined" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="fk_production_time" highCardinality="false" name="producao">
+      <Hierarchy name="producao" visible="true" hasAll="true" allMemberName="Todos Per&#237;odos" primaryKey="fk_time" description="Data de Execu&#231;&#227;o do Servi&#231;o">
+        <Table name="dim_time" schema="public">
+        </Table>
+        <Level name="Ano" visible="true" table="dim_time" column="ano" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Trimestre" visible="true" table="dim_time" column="trimestre" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+        </Level>
+        <Level name="Mes" visible="true" table="dim_time" column="anoespmes" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+        <Level name="Dia" visible="true" table="dim_time" column="diames" nameColumn="diamesdesc" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+        <Level name="Dia Semana" visible="true" table="dim_time" column="diasemana" nameColumn="diasemanadesc" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" description="Dia da Semana">
+        </Level>
+        <Level name="Esta&#231;&#227;o" visible="true" table="dim_time" column="estacao" type="String" uniqueMembers="false" levelType="TimeUndefined" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_account_group" highCardinality="false" name="conta">
+      <Hierarchy name="conta" visible="true" hasAll="true" primaryKey="fk_tag">
+        <Table name="account_group" schema="public">
+        </Table>
+        <Level name="Conta" visible="true" table="account_group" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="IfBlankName">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_payment" highCardinality="false" name="pagamento">
+      <Hierarchy name="pagamento" visible="true" hasAll="true" primaryKey="fk_tag">
+        <Table name="payment" schema="public">
+        </Table>
+        <Level name="Pagamento" visible="true" table="payment" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Forma de Pagamento" description="Forma de Pagamento">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_comp" highCardinality="false" name="company">
+      <Hierarchy name="company" visible="true" hasAll="true" primaryKey="fk_comp" caption="sal&#227;o">
+        <Table name="dim_company" schema="public">
+        </Table>
+        <Level name="Salon" visible="true" table="dim_company" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Sal&#227;o">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Valor" column="value" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" visible="true">
+    </Measure>
+    <CalculatedMember name="%" formatString="0.00%" formula="([Measures].[Valor] / ([Measures].[Valor], [Pagamento].CurrentMember.Parent))" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+</Schema>

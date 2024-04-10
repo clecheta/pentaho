@@ -1,0 +1,166 @@
+<transformation>
+  <info>
+    <name>01-etl-dw_DDL</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;</directory>
+    <parameters>
+        <parameter>
+            <name>COMPANY_ID</name>
+            <default_value>&#x24;&#x7b;COMPANY_ID&#x7d;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>DATABASE</name>
+            <default_value>&#x24;&#x7b;DATABABSE&#x7d;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>HOSTNAME</name>
+            <default_value>&#x24;&#x7b;HOSTNAME&#x7d;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>PASSWORD</name>
+            <default_value>&#x24;&#x7b;PASSWORD&#x7d;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>USERNAME</name>
+            <default_value>&#x24;&#x7b;USERNAME&#x7d;</default_value>
+            <description/>
+        </parameter>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2017&#x2f;04&#x2f;27 22&#x3a;38&#x3a;56.341</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2017&#x2f;11&#x2f;21 17&#x3a;18&#x3a;04.783</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>dw</name>
+    <server>&#x24;&#x7b;HOSTNAME&#x7d;</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;DATABASE&#x7d;</database>
+    <port>5432</port>
+    <username>&#x24;&#x7b;USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;PASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  </order>
+  <step>
+    <name>Execute DDL script</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>dw</connection>
+    <execute_each_row>N</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>Y</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>&#xa;--&#xa;-- PERIODO &#x2f; TEMPO&#xa;--&#xa;CREATE TABLE dim_time&#xa;&#x28;&#xa;  fk_time INTEGER&#xa;, version INTEGER&#xa;, date_from DATE&#xa;, date_to DATE&#xa;, Ano SMALLINT&#xa;, DiaAno SMALLINT&#xa;, &#x22;data&#x22; DATE&#xa;, Mes SMALLINT&#xa;, DiaMes SMALLINT&#xa;, DiaMesDesc VARCHAR&#x28;6&#x29;&#xa;, DiaSemana SMALLINT&#xa;, SemanaAno SMALLINT&#xa;, SemanaAnoDesc VARCHAR&#x28;6&#x29;&#xa;, DiaSemanaDesc VARCHAR&#x28;30&#x29;&#xa;, DiaSemanaDescAbrv VARCHAR&#x28;3&#x29;&#xa;, MesDesc VARCHAR&#x28;30&#x29;&#xa;, MesDescAbrv VARCHAR&#x28;3&#x29;&#xa;, MesDescAbrvAno VARCHAR&#x28;6&#x29;&#xa;, Trimestre SMALLINT&#xa;, AnoMes VARCHAR&#x28;7&#x29;&#xa;, DiaMesSemana VARCHAR&#x28;6&#x29;&#xa;, AnoEspMes VARCHAR&#x28;7&#x29;&#xa;, Estacao VARCHAR&#x28;10&#x29;&#xa;, CONSTRAINT dim_time_pkey PRIMARY KEY &#x28;fk_time&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_time ON dim_time&#x28;fk_time&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_time_lookup ON dim_time&#x28;Ano, DiaAno, Trimestre, Mes, DiaMes, DiaSemana, estacao&#x29;&#x3b;&#xa;&#xa;&#xa;--&#xa;-- TAGS &#x2f; IDENTIFICADORES&#xa;--&#xa;CREATE TABLE IF NOT EXISTS dim_tag&#xa;&#x28;&#xa;  fk_tag BIGINT NOT NULL&#xa;, versao INTEGER&#xa;, data_inicial DATE&#xa;, data_final DATE&#xa;, id_tag BIGINT&#xa;, unique_identifier NUMERIC&#xa;, name VARCHAR&#x28;255&#x29;&#xa;, type VARCHAR&#x28;255&#x29;&#xa;, descricao VARCHAR&#x28;255&#x29;&#xa;, CONSTRAINT dim_tag_pkey PRIMARY KEY &#x28;fk_tag&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_tag ON dim_tag&#x28;fk_tag&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_tag_lookup ON dim_tag&#x28;fk_tag, id_tag, unique_identifier, name, type, descricao&#x29;&#x3b;&#xa;CREATE VIEW skill AS SELECT fk_tag, name, id_tag, unique_identifier FROM dim_tag&#xa;    WHERE type &#x3d; &#x27;SKILL&#x27; OR fk_tag&#x3d;0&#x3b;&#xa;CREATE VIEW brand AS SELECT fk_tag, name, id_tag FROM dim_tag&#xa;    WHERE type &#x3d; &#x27;BRAND&#x27; OR fk_tag&#x3d;0&#x3b;   &#xa;CREATE VIEW line AS SELECT fk_tag, name, id_tag FROM dim_tag&#xa;    WHERE type &#x3d; &#x27;LINE&#x27; OR fk_tag&#x3d;0&#x3b;   &#xa;CREATE VIEW account_plan AS SELECT fk_tag, name, id_tag FROM dim_tag&#xa;    WHERE type &#x3d; &#x27;ACCOUNT_PLAN&#x27; OR fk_tag&#x3d;0&#x3b;   &#xa;CREATE VIEW account_group AS SELECT fk_tag, name, id_tag FROM dim_tag&#xa;    WHERE type &#x3d; &#x27;ACCOUNT_GROUP&#x27; OR fk_tag&#x3d;0&#x3b;   &#xa;CREATE VIEW payment AS SELECT fk_tag, name, id_tag FROM dim_tag&#xa;    WHERE type &#x3d; &#x27;PAYMENT&#x27; OR fk_tag&#x3d;0&#x3b;&#xa;&#xa;&#xa;--&#xa;-- CLIENTES&#xa;--&#xa;CREATE TABLE IF NOT EXISTS dim_customer&#xa;&#x28;&#xa;  fk_customer BIGINT NOT NULL&#xa;, versao INTEGER&#xa;, data_inicial TIMESTAMP&#xa;, data_final TIMESTAMP&#xa;, customer_id BIGINT&#xa;, nome VARCHAR&#x28;255&#x29;&#xa;, cpf VARCHAR&#x28;25&#x29;&#xa;, email VARCHAR&#x28;255&#x29;&#xa;, phone1 VARCHAR&#x28;25&#x29;&#xa;, phone2 VARCHAR&#x28;25&#x29;&#xa;, cadastro text&#xa;, nascimento DATE&#xa;, sexo VARCHAR&#x28;15&#x29;&#xa;, endereco VARCHAR&#x28;255&#x29;&#xa;, cidade VARCHAR&#x28;255&#x29;&#xa;, estado VARCHAR&#x28;255&#x29;&#xa;, bairro VARCHAR&#x28;255&#x29;&#xa;, pais VARCHAR&#x28;255&#x29;&#xa;, ultima_visita VARCHAR&#x28;12&#x29;&#xa;, CONSTRAINT dim_customer_pkey PRIMARY KEY &#x28;fk_customer&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_customer ON dim_customer&#x28;fk_customer&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_customer_lookup ON dim_customer&#x28;customer_id, nome, ultima_visita, cpf, email, phone1, phone2&#x29;&#x3b;&#xa;&#xa;&#xa;--&#xa;-- SERVICOS&#xa;--&#xa;CREATE TABLE IF NOT EXISTS dim_service&#xa;&#x28;&#xa;  versao INTEGER&#xa;, data_inicial DATE&#xa;, data_final DATE&#xa;, service_type_id BIGINT&#xa;, active VARCHAR&#x28;7&#x29;&#xa;, servico VARCHAR&#x28;150&#x29;&#xa;, valor NUMERIC&#x28;21, 2&#x29;&#xa;, max_value NUMERIC&#x28;21, 2&#x29;&#xa;, comissao DOUBLE PRECISION&#xa;, professional_id BIGINT&#xa;, duracao INTEGER&#xa;, deleted BOOLEAN&#xa;, taxa DOUBLE PRECISION&#xa;, origem VARCHAR&#x28;15&#x29;&#xa;, fk_service BIGINT NOT NULL&#xa;, CONSTRAINT dim_service_pkey PRIMARY KEY &#x28;fk_service&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_service ON dim_service USING btree &#x28;fk_service&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_service_lookup ON dim_service USING btree &#x28;service_type_id, servico&#x29;&#x3b;&#xa;&#xa;--&#xa;-- PRODUTOS&#xa;--&#xa;CREATE TABLE IF NOT EXISTS dim_product&#xa;&#x28;&#xa;  versao INTEGER&#xa;, data_inicial DATE&#xa;, data_final DATE&#xa;, service_type_id BIGINT&#xa;, title VARCHAR&#x28;255&#x29;&#xa;, brand VARCHAR&#x28;150&#x29;&#xa;, line VARCHAR&#x28;255&#x29;&#xa;, measure_type VARCHAR&#x28;5&#x29;&#xa;, measure INTEGER&#xa;, value numeric&#x28;19,2&#x29;&#xa;, use_value NUMERIC&#x28;19, 2&#x29;&#xa;, active VARCHAR&#x28;7&#x29;&#xa;, default_value NUMERIC&#x28;19, 2&#x29;&#xa;, profit NUMERIC&#x28;19, 2&#x29;&#xa;, use_profit NUMERIC&#x28;19, 2&#x29;&#xa;, ncm_code VARCHAR&#x28;255&#x29;&#xa;, bar_code VARCHAR&#x28;255&#x29;&#xa;, cod VARCHAR&#x28;255&#x29;&#xa;, weight INTEGER&#xa;, create_date TIMESTAMP&#xa;, last_update TIMESTAMP&#xa;, deleted BOOLEAN&#xa;, fk_product BIGINT NOT NULL&#xa;, stock_quantity VARCHAR&#x28;50&#x29;&#xa;, CONSTRAINT dim_product_pkey PRIMARY KEY &#x28;fk_product&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_product_pkey ON dim_product&#x28;fk_product&#x29;&#x3b;&#xa;--CREATE INDEX idx_dim_product ON dim_product&#x28;fk_product, measure_type, measure&#x29;&#x3b; --aparentemente nao resolveu a lentidao e ainda piorou um pouco&#xa;CREATE INDEX idx_dim_product_lookup ON dim_product&#x28;service_type_id, title, measure_type, measure, stock_quantity&#x29;&#x3b;&#xa;&#xa;&#xa;--&#xa;-- PROFISSIONAIS&#xa;--&#xa;CREATE TABLE IF NOT EXISTS dim_professional&#xa;&#x28;&#xa;  professional_id BIGINT&#xa;, versao INTEGER&#xa;, data_inicial TIMESTAMP&#xa;, data_final TIMESTAMP&#xa;, cpf VARCHAR&#x28;255&#x29;&#xa;, nome VARCHAR&#x28;255&#x29;&#xa;, apelido VARCHAR&#x28;255&#x29;&#xa;, banco VARCHAR&#x28;255&#x29;&#xa;, conta VARCHAR&#x28;255&#x29;&#xa;, digito_conta VARCHAR&#x28;255&#x29;&#xa;, agencia VARCHAR&#x28;255&#x29;&#xa;, email VARCHAR&#x28;255&#x29;&#xa;, endereco VARCHAR&#x28;255&#x29;&#xa;, complemento VARCHAR&#x28;255&#x29;&#xa;, cep VARCHAR&#x28;255&#x29;&#xa;, cidade VARCHAR&#x28;255&#x29;&#xa;, pais VARCHAR&#x28;255&#x29;&#xa;, bairro VARCHAR&#x28;255&#x29;&#xa;, numero VARCHAR&#x28;255&#x29;&#xa;, estado VARCHAR&#x28;255&#x29;&#xa;, telefone TEXT&#xa;, equipe VARCHAR&#x28;255&#x29;&#xa;, fk_professional BIGINT NOT NULL&#xa;, CONSTRAINT dim_professional_pkey PRIMARY KEY &#x28;fk_professional&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_professional ON dim_professional&#x28;fk_professional&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_professional_lookup ON dim_professional&#x28;professional_id, nome&#x29;&#x3b;&#xa;&#xa;--&#xa;-- PROMOCOES&#xa;--&#xa;CREATE TABLE IF NOT EXISTS dim_promotion&#xa;&#x28;&#xa;  fk_promotion BIGINT NOT NULL&#xa;, versao INTEGER&#xa;, data_inicial DATE&#xa;, data_final DATE&#xa;, promo_id BIGINT&#xa;, enabled BOOLEAN&#xa;, title VARCHAR&#x28;255&#x29;&#xa;, begin_date DATE&#xa;, end_date DATE&#xa;, CONSTRAINT dim_promotion_pkey PRIMARY KEY &#x28;fk_promotion&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_promotion ON dim_promotion&#x28;fk_promotion&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_promotion_lookup ON dim_promotion&#x28;promo_id, title, begin_date, end_date&#x29;&#x3b;&#xa;&#xa;--&#xa;-- VOUCHER DROP TABLE dim_voucher&#xa;--&#xa;CREATE TABLE IF NOT EXISTS dim_voucher&#xa;&#x28;&#xa;  fk_voucher BIGINT NOT NULL&#xa;, versao INTEGER&#xa;, data_inicial DATE&#xa;, data_final DATE&#xa;, voucher_id BIGINT&#xa;, create_date DATE&#xa;, use_date DATE&#xa;, status VARCHAR&#x28;25&#x29;&#xa;, key VARCHAR&#x28;255&#x29;&#xa;, value numeric&#x28;19,2&#x29;&#xa;, CONSTRAINT dim_voucher_pkey PRIMARY KEY &#x28;fk_voucher&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_voucher ON dim_voucher&#x28;fk_voucher&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_voucher_lookup ON dim_voucher&#x28;fk_voucher, voucher_id, key, create_date, use_date&#x29;&#x3b;&#xa;&#xa;--&#xa;-- STOCK&#xa;--&#xa;CREATE TABLE dim_stock&#xa;&#x28;&#xa;  fk_stock BIGINT NOT NULL&#xa;, stock_id BIGINT&#xa;, versao INTEGER&#xa;, data_inicial DATE&#xa;, data_final DATE&#xa;, professional_id BIGINT&#xa;, name VARCHAR&#x28;255&#x29;&#xa;, type VARCHAR&#x28;30&#x29;&#xa;, CONSTRAINT dim_stock_pkey PRIMARY KEY &#x28;fk_stock&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_stock ON dim_stock&#x28;fk_stock&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_stock_lookup ON dim_stock&#x28;stock_id, professional_id, name, type&#x29;&#x3b;&#xa;&#xa;--&#xa;-- Company&#xa;--&#xa;CREATE TABLE IF NOT EXISTS dim_company&#xa;&#x28;&#xa;  fk_comp BIGINT NOT NULL&#xa;, version INTEGER&#xa;, begin_date DATE&#xa;, end_date DATE&#xa;, company_id BIGINT&#xa;, name VARCHAR&#x28;255&#x29;&#xa;, CONSTRAINT dim_company_pkey PRIMARY KEY &#x28;fk_comp&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_company ON dim_company&#x28;fk_comp&#x29;&#x3b;&#xa;CREATE INDEX idx_dim_company_lookup ON dim_company&#x28;company_id, name&#x29;&#x3b;&#xa;&#xa;--&#xa;-- FACT Tables DROP TABLE fact_operation&#xa;--&#xa;CREATE TABLE fact_operation&#xa;&#x28;&#xa;  id_fact_operation bigint NOT NULL,&#xa;  date DATE,&#xa;  appointment_id BIGINT,&#xa;  value_prof numeric&#x28;19,2&#x29;,&#xa;  value_pass numeric&#x28;19,2&#x29;, --repasse&#xa;  value_comp numeric&#x28;19,2&#x29;,&#xa;  value_use numeric&#x28;19,2&#x29;, --insumo&#xa;  value_sell numeric&#x28;19,2&#x29;, --revenda&#xa;  use_service numeric&#x28;19,2&#x29;, --isumo&#x3a;uso_em_servico&#xa;  fix_service numeric&#x28;19,2&#x29;, --insumo&#x3a;fixo_em_servico&#xa;  tax numeric&#x28;19,2&#x29;,&#xa;  tax_value numeric&#x28;19,2&#x29;,&#xa;  discount numeric&#x28;19,2&#x29;,&#xa;  before_discount numeric&#x28;19,2&#x29;,&#xa;  promotion numeric&#x28;19,2&#x29;,&#xa;  quantity_un DOUBLE PRECISION,&#xa;  equipe VARCHAR&#x28;255&#x29;,&#xa;  movement_type VARCHAR&#x28;30&#x29;,&#xa;  preference BIGINT,&#xa;  fk_time integer NOT NULL,&#xa;  fk_customer bigint,&#xa;  fk_stock bigint,&#xa;  fk_professional bigint NOT NULL,&#xa;  fk_service bigint NOT NULL,&#xa;  fk_product bigint NOT NULL,&#xa;  fk_skill bigint NOT NULL,&#xa;  fk_brand bigint NOT NULL,&#xa;  fk_comp BIGINT NOT NULL,&#xa;  fk_promotion BIGINT NOT NULL,&#xa;  fk_voucher BIGINT NOT NULL,&#xa;  CONSTRAINT fact_operation_pkey PRIMARY KEY &#x28;id_fact_operation&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE SEQUENCE seq_fact_operation START 1&#x3b;&#xa;CREATE INDEX idx_fact_operation_pkey ON fact_operation&#x28;id_fact_operation&#x29;&#x3b;&#xa;CREATE INDEX idx_fact_operation_lookup ON fact_operation&#x28;fk_time, fk_customer, fk_professional, fk_service, fk_skill, fk_brand, fk_comp, fk_promotion, fk_voucher&#x29;&#x3b;&#xa;&#xa;&#xa;CREATE TABLE IF NOT EXISTS fact_stock&#xa;&#x28;&#xa;  id_fact_stock BIGINT NOT NULL&#xa;, appointment_id BIGINT&#xa;, name VARCHAR&#x28;255&#x29;&#xa;, stock_type VARCHAR&#x28;30&#x29;&#xa;, stock_origin VARCHAR&#x28;255&#x29;&#xa;, product_register_date VARCHAR&#x28;10&#x29;&#xa;, quantity_un DOUBLE PRECISION&#xa;, type VARCHAR&#x28;30&#x29;&#xa;, service_type_measure INTEGER&#xa;, line VARCHAR&#x28;255&#x29;&#xa;, date DATE &#xa;, expiration VARCHAR&#x28;10&#x29;&#xa;, fk_professional BIGINT NOT NULL&#xa;, fk_product BIGINT NOT NULL&#xa;, fk_time INTEGER NOT NULL&#xa;, fk_expire INTEGER NOT NULL&#xa;, fk_tag BIGINT NOT NULL --marca&#xa;, fk_comp BIGINT NOT NULL&#xa;, CONSTRAINT fact_stock_pkey PRIMARY KEY &#x28;id_fact_stock&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE SEQUENCE seq_fact_stock START 1&#x3b;&#xa;CREATE INDEX idx_fact_stock_pkey ON fact_stock&#x28;id_fact_stock&#x29;&#x3b;&#xa;CREATE INDEX idx_fact_stock ON fact_stock&#x28;name, type, line, expiration, quantity_un, service_type_measure&#x29;&#x3b;&#xa;CREATE INDEX idx_fact_stock_lookup ON fact_stock&#x28;id_fact_stock, fk_time, fk_professional, fk_product, fk_tag, fk_expire, fk_comp&#x29;&#x3b;&#xa;&#xa;CREATE TABLE fact_finance&#xa;&#x28;&#xa;  id_fact_finance BIGINT NOT NULL&#xa;, date DATE   &#xa;, value numeric&#x28;21,2&#x29;&#xa;, fk_account_group BIGINT NOT NULL&#xa;, fk_payment BIGINT NOT NULL&#xa;, fk_compensation_time INTEGER NOT NULL&#xa;, fk_production_time INTEGER NOT NULL&#xa;, fk_comp BIGINT NOT NULL&#xa;, CONSTRAINT fact_finance_pkey PRIMARY KEY &#x28;id_fact_finance&#x29;&#xa;&#x29;&#x3b;&#xa;CREATE SEQUENCE seq_fact_finance START 1&#x3b;&#xa;CREATE INDEX idx_fact_finance_pkey ON fact_finance&#x28;id_fact_finance&#x29;&#x3b;&#xa;--CREATE INDEX idx_fact_finance ON fact_finance&#x28;account_type,customer_account&#x29;&#x3b;&#xa;CREATE INDEX idx_fact_finance_lookup ON fact_finance&#x28;fk_account_group, fk_payment, fk_compensation_time, fk_production_time, fk_comp&#x29;&#x3b;&#xa;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>64</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>

@@ -1,0 +1,170 @@
+<Schema name="Operacao">
+  <Cube name="Producao" visible="true" cache="false" enabled="true">
+    <Table name="fact_operation" schema="public">
+    </Table>
+    <Dimension type="TimeDimension" visible="true" foreignKey="fk_time" highCardinality="false" name="periodo">
+      <Hierarchy name="periodo" visible="true" hasAll="true" allMemberName="Todos Per&#237;odos" primaryKey="fk_time">
+        <Table name="dim_time" schema="public">
+        </Table>
+        <Level name="Ano" visible="true" table="dim_time" column="ano" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Trimestre" visible="true" table="dim_time" column="trimestre" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+        </Level>
+        <Level name="Mes" visible="true" table="dim_time" column="anoespmes" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+        <Level name="Dia" visible="true" table="dim_time" column="diames" nameColumn="diamesdesc" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+        <Level name="Dia Semana" visible="true" table="dim_time" column="diasemana" nameColumn="diasemanadesc" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" description="Dia da Semana">
+        </Level>
+        <Level name="Esta&#231;&#227;o" visible="true" table="dim_time" column="estacao" type="String" uniqueMembers="false" levelType="TimeUndefined" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_skill" highCardinality="false" name="especialidade">
+      <Hierarchy name="especialidade" visible="true" hasAll="true" primaryKey="fk_tag">
+        <Table name="skill" schema="public">
+        </Table>
+        <Level name="Especialidades" visible="true" table="skill" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_customer" highCardinality="false" name="cliente">
+      <Hierarchy name="cliente" visible="true" hasAll="true" primaryKey="fk_customer">
+        <Table name="dim_customer" schema="public">
+        </Table>
+        <Level approxRowCount="20000" name="Cadastro" visible="true" table="dim_customer" column="cadastro" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="CPF - Telefone 1 - Telefone 2  - E-mail">
+        </Level>
+        <Level approxRowCount="20000" name="Clientes" visible="true" table="dim_customer" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level approxRowCount="20000" name="Ultima Visita" visible="true" column="ultima_visita" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_service" highCardinality="false" name="servico">
+      <Hierarchy name="servico" visible="true" hasAll="true" primaryKey="fk_service">
+        <Table name="dim_service" schema="public">
+        </Table>
+        <Level approxRowCount="300" name="Servi&#231;os" visible="true" table="dim_service" column="servico" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_professional" highCardinality="false" name="profissional">
+      <Hierarchy name="profissional" visible="true" hasAll="true" primaryKey="fk_professional">
+        <Table name="dim_professional" schema="public">
+        </Table>
+        <Level name="Profissionais" visible="true" table="dim_professional" column="nome" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_comp" highCardinality="false" name="company">
+      <Hierarchy name="company" visible="true" hasAll="true" primaryKey="fk_comp" caption="sal&#227;o">
+        <Table name="dim_company" schema="public">
+        </Table>
+        <Level name="Salon" visible="true" table="dim_company" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Sal&#227;o">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_promotion" highCardinality="false" name="promocao">
+      <Hierarchy name="promocao" visible="true" hasAll="true" primaryKey="fk_promotion" caption="promo&#231;&#227;o">
+        <Table name="dim_promotion" schema="public">
+        </Table>
+        <Level name="Promocao" visible="true" table="dim_promotion" column="title" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Promo&#231;&#227;o">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_voucher" highCardinality="false" name="voucher">
+      <Hierarchy name="voucher" visible="true" hasAll="true" primaryKey="fk_voucher">
+        <Table name="dim_voucher" schema="public">
+        </Table>
+        <Level name="Voucher" visible="true" table="dim_voucher" column="key" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Value" visible="true" table="dim_voucher" column="value" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Valor">
+        </Level>
+        <Level name="UseDate" visible="true" table="dim_voucher" column="use_date" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Data de Uso">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_product" highCardinality="false" name="produto">
+      <Hierarchy name="produto" visible="true" hasAll="true" primaryKey="fk_product">
+        <Table name="dim_product" schema="public">
+        </Table>
+        <Level name="Produto" visible="true" table="dim_product" column="title" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Volume" visible="true" table="dim_product" column="measure" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Medida" visible="true" table="dim_product" column="measure_type" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="Unidade de Medida">
+        </Level>
+        <Level name="Linha" visible="true" table="dim_product" column="line" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_brand" highCardinality="false" name="marca">
+      <Hierarchy name="marca" visible="true" hasAll="true" primaryKey="fk_tag">
+        <Table name="brand" schema="public">
+        </Table>
+        <Level name="Marca" visible="true" table="brand" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_fact_operation" highCardinality="false" name="equipe">
+      <Hierarchy name="equipe" visible="true" hasAll="true" primaryKey="id_fact_operation">
+        <Table name="fact_operation" schema="public">
+        </Table>
+        <Level name="Equipe" visible="true" column="equipe" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="fk_stock" highCardinality="false" name="estoque">
+      <Hierarchy name="estoque" visible="true" hasAll="true" primaryKey="fk_stock">
+        <Table name="dim_stock" schema="public">
+        </Table>
+        <Level name="Estoque" visible="true" table="dim_stock" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_fact_operation" highCardinality="false" name="movimento">
+      <Hierarchy name="movimento" visible="true" hasAll="true" primaryKey="id_fact_operation">
+        <Table name="fact_operation" schema="public">
+        </Table>
+        <Level name="Movimento" visible="true" column="movement_type" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" description="Movimento do Estoque">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="$profissional" column="value_prof" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" description="Valor que ficou com o profissional" visible="true">
+    </Measure>
+    <Measure name="$salao" column="value_comp" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" description="Valor que ficou para a casa" visible="true">
+    </Measure>
+    <Measure name="$auxiliar" column="value_pass" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" description="valor produzido pelo auxiliar" visible="true">
+    </Measure>
+    <Measure name="$insumo" column="value_use" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" description="Valor dos produtos usados como insumo no servi&#231;o" visible="true">
+    </Measure>
+    <Measure name="$revenda" column="value_sell" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" description="Valor de produtos de revenda" visible="true">
+    </Measure>
+    <Measure name="$usoServico" column="use_service" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" description="Valor de insumo usado em servi&#231;o" visible="true">
+    </Measure>
+    <Measure name="$fixoServico" column="fix_service" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" description="Valor de insumo fixado no servi&#231;o" visible="true">
+    </Measure>
+    <Measure name="$taxa" column="tax_value" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" description="Valor da taxa administrativa" visible="true">
+    </Measure>
+    <Measure name="%taxa" column="tax" datatype="Numeric" aggregator="sum" description="% que fica retido pelo sal&#227;o" visible="true">
+    </Measure>
+    <Measure name="$desc.promocao" column="promotion" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" description="valor descontado por conta de promo&#231;&#227;o" visible="true">
+    </Measure>
+    <Measure name="$desconto" column="discount" datatype="Numeric" formatString="R$ #,##0.00" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Atendimentos" column="appointment_id" aggregator="distinct count" description="quantidade de agendamentos com status: conlu&#237;dos ou pagamento pendente" visible="true">
+    </Measure>
+    <Measure name="Preferencia" column="preference" datatype="Integer" aggregator="distinct count" description="quantidade de atendimentos de prefer&#234;ncia" visible="true">
+    </Measure>
+    <Measure name="Clientes" column="fk_customer" aggregator="distinct-count" description="quantidade de clientes &#250;nicos" visible="true">
+    </Measure>
+    <Measure name="Consumo" column="quantity_un" datatype="Numeric" formatString="0.0" aggregator="sum" description="Consumo do produto bruto sem formata&#231;&#227;o de Volume e Medida" visible="true">
+    </Measure>
+    <CalculatedMember name="Valor Total" description="Total de Servi&#231;o incluindo Insumos." formula="[Measures].[$profissional]+[Measures].[$salao]+[Measures].[$taxa]" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="%Producao Prof" formatString="0.00%" description="Quanto o profissional representa na produ&#231;&#227;o geral " formula="[Measures].[Valor Total] / ([Measures].[Valor Total], [Profissionais].CurrentMember.Parent)" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="%Participacao Prof" formatString="0.00%" description="% de participa&#231;&#227;o do profissional referente ao valor total por ele produzido" formula="[Measures].[$profissional] / [Measures].[Valor Total]" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+</Schema>
